@@ -1,0 +1,11 @@
+<view class="container">
+  <view>待办事项列表</view>
+  <hr/>
+  <view class="section">
+    <input id="todo" bindconfirm="addItem" type="text" maxlength="20" value='{{current}}' placeholder="添加..." confirm-type="done" focus="true"/>
+  </view>
+  <view wx:for="{{todos}}" wx:key="index" id="{{index}}">
+    {{index+1}}: {{item.title}}
+    <icon type="clear" color="red" bindtap="deleteItem" id="{{index}}"></icon>
+  </view>
+</view>
